@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="myapp">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <!-- css file linkage -->
+        <link rel='stylesheet' href="css/style.css">
+        <title>NewGen payment task</title>
+    </head>
+    <body>
+        <div class="container" >
+            <div class="row">
+                <div class="col-sm-4 col-xs-8 tab" >
+                        <p >tab 1</p>
+                        <p >tab 2</p>
+                        <p >tab 3</p>
+                        <p >tab 4</p>
+                        <input type="range" min="12" max="120" value="70" id="font-size" />
+                </div>
+                <div class="col-sm-8 col-xs-8 bor" >
+                    <div style="margin-bottom: 20px"></div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 " >
+                         <img src="https://s33.postimg.org/ef8wnuddr/pot1.png" height="200px" width="100%" class="img-responsive" style="margin-bottom: 20px"> 
+                        </div> 
+                    </div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
+                        and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                        the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                        software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+
+                    <div ng-controller="AddtaskController">
+                            <ul class="list-group" ng-repeat="task in tasks">
+                                 <li class="list-group-item">
+                                    <div class="pull-left action-buttons">
+                                        <a href="#" class="trash" ng-click="deleteObject($index)"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </div>
+                                    <label>{{task}}</label>
+                                 </li>
+                            </ul>
+                            
+                            <form ng-submit="add()">
+                                <div class="form-group">
+                                     <input type="text" ng-model="data" required><br />
+                                </div>     
+                                <button class="btn btn-primary">Submit</button>
+                            </form>   
+                    </div>
+                    
+            </div>
+            </div>
+        </div>    
+        <script src="lib/angular.min.js"></script>   
+        <script src="js/app.js"></script>
+    </body>
+</html>
